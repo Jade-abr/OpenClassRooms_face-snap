@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FaceSnap} from "../models/face-snap.model";
 import {FaceSnapsService} from "../services/face-snaps.service";
+import {interval, take, tap} from "rxjs";
 
 
 @Component({
@@ -16,6 +17,10 @@ export class FaceSnapListComponent implements OnInit {
 
   ngOnInit(): void {
     this.faceSnaps = this.faceSnapsService.faceSnaps;
+    interval(1000).pipe(
+      take(3),
+      tap(console.log)
+    ).subscribe();
   }
 
 }
