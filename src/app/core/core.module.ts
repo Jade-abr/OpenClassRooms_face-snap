@@ -4,6 +4,7 @@ import {httpInterceptorProviders} from "./interceptor";
 import * as fr from "@angular/common/locales/fr";
 import {HeaderComponent} from "./components/header/header.component";
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -13,7 +14,8 @@ import {RouterModule} from "@angular/router";
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent
